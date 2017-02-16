@@ -2,6 +2,7 @@ package ck.itheima.com.goodleplay.network;
 
 import java.util.List;
 
+import ck.itheima.com.goodleplay.bean.CategoryBean;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -20,4 +21,7 @@ public interface Api {
 
     @GET("recommend")
     Call<List<String>> listReconmend();
+
+    @GET("category")
+    Call<List<CategoryBean>> listCategory();
 }

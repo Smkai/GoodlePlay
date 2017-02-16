@@ -11,4 +11,6 @@ package ck.itheima.com.goodleplay.app;
 
 public class Constans {
     public static final String BASE_URL = "http://192.168.18.84:8080/GooglePlayServer/";
+    public static final String BASE_IMAGEUR = BASE_URL + "image?name=";
+
 }

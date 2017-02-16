@@ -32,7 +32,7 @@ public class URLUtils {
     /**
      * range 已下载的大小
      */
-   /* public static String getDownloadURL(String name, long range) {
+ /*  public static String getDownloadURL(String name, long range) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("name", name);
         map.put("range", range);

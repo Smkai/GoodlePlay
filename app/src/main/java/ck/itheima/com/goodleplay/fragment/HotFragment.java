@@ -45,13 +45,11 @@ public class HotFragment extends BaseFragment {
             public void onResponse(Call<List<String>> call, Response<List<String>> response) {
                 mDataList = response.body();
                 onDataloadSuccess();
-                Toast.makeText(getContext(), "网络成功", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<List<String>> call, Throwable t) {
                 onDataLoadFailed();
-                Toast.makeText(getContext(), "网络失败", Toast.LENGTH_SHORT).show();
             }
         });
     }

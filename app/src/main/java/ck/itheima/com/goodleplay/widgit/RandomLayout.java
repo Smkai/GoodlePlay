@@ -1,4 +1,4 @@
-package ck.itheima.com.goodleplay;
+package ck.itheima.com.goodleplay.widgit;
 
 import android.content.Context;
 import android.graphics.Rect;

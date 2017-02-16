@@ -1,4 +1,4 @@
-package ck.itheima.com.goodleplay;
+package ck.itheima.com.goodleplay.widgit;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.FrameLayout;
 
-import com.itheima.googleplaydemo.utils.AnimationUtil;
+import ck.itheima.com.goodleplay.utils.AnimationUtil;
 
 public class StellarMap extends FrameLayout implements AnimationListener, OnTouchListener, OnGestureListener {
 
