@@ -23,7 +23,7 @@ public abstract class BaseLoadmoreListFragment extends BaseListFragment {
     AbsListView.OnScrollListener mOnScrollListener = new AbsListView.OnScrollListener() {
         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
-            if (getListView().getLastVisiblePosition() == getAdapter().getCount() - 1){
+            if (getListView().getLastVisiblePosition() == getAdatpe().getCount() - 1){
                 starLoadMoreData();//加载更多数据 让子类自行完成
             }
 

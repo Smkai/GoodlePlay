@@ -36,7 +36,7 @@ public abstract class BaseListFragment extends BaseFragment {
         return mListView;
     }
 
-    public BaseAdapter getBaseAdatper() {
+    public BaseAdapter getAdatpe() {
         return mBaseAdatper;
     }
 

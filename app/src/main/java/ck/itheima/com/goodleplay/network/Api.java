@@ -3,8 +3,10 @@ package ck.itheima.com.goodleplay.network;
 import java.util.List;
 
 import ck.itheima.com.goodleplay.bean.CategoryBean;
+import ck.itheima.com.goodleplay.bean.SubjectItemBean;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * 类名:    Api
@@ -24,4 +26,7 @@ public interface Api {
 
     @GET("category")
     Call<List<CategoryBean>> listCategory();
+
+    @GET("subject")
+    Call<List<SubjectItemBean>> listSubject(@Query("index")int index);
 }
