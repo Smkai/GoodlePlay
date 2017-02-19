@@ -22,6 +22,12 @@ public abstract class BaseListFragment extends BaseFragment {
     protected View onCreateContentView() {
         mListView = new ListView(getContext());
         mBaseAdatper = getAdapter();
+
+        View view = AddHead();//给listView添加一个头
+        if (view != null){
+            mListView.addHeaderView(view);
+        }
+
         mListView.setAdapter(mBaseAdatper);
         mListView.setDivider(null);//去掉分割线
         initListView();
@@ -39,5 +45,9 @@ public abstract class BaseListFragment extends BaseFragment {
     public BaseAdapter getAdatpe() {
         return mBaseAdatper;
     }
+    public View AddHead(){
+        return null;
+    }
+
 
 }

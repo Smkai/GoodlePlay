@@ -16,7 +16,7 @@ import ck.itheima.com.goodleplay.widgit.StellarMap;
  * 创建时间:2017/2/16 0016 下午 4:52
  * 包名:    ck.itheima.com.goodleplay.adapter
  * 更新者:  $Author$ $Date$
- * 描述:    TODO
+ * 描述:    推荐页面的Adapter   StellarMap
  */
 
 public class RecommendAdapter implements StellarMap.Adapter {

@@ -30,6 +30,8 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
         mDataList = dataList;
     }
 
+
+
     @Override
     public int getCount() {
         if (mDataList != null){

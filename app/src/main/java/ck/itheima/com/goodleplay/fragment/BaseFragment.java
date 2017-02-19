@@ -40,7 +40,6 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle
             savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_base, null);
-
         ButterKnife.bind(this, root);
         init();
         return root;
@@ -52,7 +51,7 @@ public abstract class BaseFragment extends Fragment {
         startLoadData();//加载数据
     }
 
-    private void init() {
+    public void init() {
 
     }
 
