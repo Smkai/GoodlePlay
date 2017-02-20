@@ -3,6 +3,7 @@ package ck.itheima.com.goodleplay.network;
 import java.util.List;
 
 import ck.itheima.com.goodleplay.base.AppListBean;
+import ck.itheima.com.goodleplay.bean.AppDatailBean;
 import ck.itheima.com.goodleplay.bean.CategoryBean;
 import ck.itheima.com.goodleplay.bean.HomeBean;
 import ck.itheima.com.goodleplay.bean.SubjectItemBean;
@@ -40,4 +41,7 @@ public interface Api {
 
     @GET("home")
     Call<HomeBean> listHome(@Query("index")int index);
+
+    @GET("detail")
+    Call<AppDatailBean> getAppDatail(@Query("packageName")String packageName);
 }

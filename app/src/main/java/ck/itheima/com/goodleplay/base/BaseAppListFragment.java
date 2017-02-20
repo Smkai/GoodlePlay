@@ -1,10 +1,12 @@
 package ck.itheima.com.goodleplay.base;
 
+import android.content.Intent;
 import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ck.itheima.com.goodleplay.activity.AppDataActivity;
 import ck.itheima.com.goodleplay.adapter.BaseApplistAdapter;
 
 /**
@@ -33,5 +35,18 @@ public abstract class BaseAppListFragment extends BaseLoadmoreListFragment {
         return mDataList;
     }
 
+    /**
+     * 首页 应用 游戏  都有一样的Item点击事件 所以在父类里面实现
+     * @param position
+     */
+    @Override
+    protected void onListItemClick(int position) {
+        Intent intent = new Intent(getContext(), AppDataActivity.class);
+        intent.putExtra("package_name", getPackageName(position));
+        startActivity(intent);
+    }
 
+    protected String getPackageName(int position) {
+        return getDataList().get(position).getPackageName();
+    }
 }

@@ -1,6 +1,7 @@
 package ck.itheima.com.goodleplay.fragment;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
@@ -30,9 +31,28 @@ public abstract class BaseListFragment extends BaseFragment {
 
         mListView.setAdapter(mBaseAdatper);
         mListView.setDivider(null);//去掉分割线
+
+        mListView.setOnItemClickListener(mListener);//listView Item的点击事件
+
         initListView();
         return mListView;
     }
+
+    private AdapterView.OnItemClickListener mListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+              onListItemClick(position);
+        }
+    };
+
+    /**
+     * 点击事件 子类可以自己去实现
+     * @param position
+     */
+
+    protected void onListItemClick(int position) {
+    }
+
 
     protected void initListView(){}
 

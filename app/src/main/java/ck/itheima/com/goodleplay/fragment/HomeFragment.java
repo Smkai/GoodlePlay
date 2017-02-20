@@ -79,4 +79,9 @@ public class HomeFragment extends BaseAppListFragment {
 
         return banner;
     }
+
+    @Override
+    protected String getPackageName(int position) {//首页添加了一个头  要调整位置
+        return getDataList().get(position - 1).getPackageName();
+    }
 }
