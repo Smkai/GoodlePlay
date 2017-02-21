@@ -13,9 +13,11 @@ import com.bumptech.glide.request.target.Target;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import ck.itheima.com.goodleplay.R;
 import ck.itheima.com.goodleplay.app.Constans;
 import ck.itheima.com.goodleplay.bean.AppDatailBean;
+import ck.itheima.com.goodleplay.utils.UIUtils;
 
 /**
  * 类名:    AppDetailSecurityView
@@ -23,7 +25,7 @@ import ck.itheima.com.goodleplay.bean.AppDatailBean;
  * 创建时间:2017/2/20 0020 下午 3:42
  * 包名:    ck.itheima.com.goodleplay.widgit
  * 更新者:  $Author$ $Date$
- * 描述:    TODO
+ * 描述:
  */
 
 public class AppDetailSecurityView extends RelativeLayout {
@@ -31,6 +33,9 @@ public class AppDetailSecurityView extends RelativeLayout {
     LinearLayout mTagsContainer;
     @BindView(R.id.des_container)
     LinearLayout mDesContainer;
+    @BindView(R.id.iv_secerity)
+    ImageView    mIvSecerity;
+    private boolean isOpen = false;
 
     public AppDetailSecurityView(Context context) {
         this(context, null);
@@ -54,7 +59,8 @@ public class AppDetailSecurityView extends RelativeLayout {
             String iconUrl = Constans.BASE_IMAGEUR + safeBean.getSafeUrl();
 
             ImageView tag = new ImageView(getContext());
-            Glide.with(getContext()).load(iconUrl).override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).into(tag);
+            Glide.with(getContext()).load(iconUrl).override(Target.SIZE_ORIGINAL, Target
+                    .SIZE_ORIGINAL).into(tag);
 
             mTagsContainer.addView(tag);
             /*----------------------------加描述------------------------------*/
@@ -64,7 +70,8 @@ public class AppDetailSecurityView extends RelativeLayout {
             String desUrl = Constans.BASE_IMAGEUR + safeBean.getSafeDesUrl();
 
             ImageView des = new ImageView(getContext());
-            Glide.with(getContext()).load(desUrl).override(Target.SIZE_ORIGINAL,Target.SIZE_ORIGINAL).into(des);//图片
+            Glide.with(getContext()).load(desUrl).override(Target.SIZE_ORIGINAL, Target
+                    .SIZE_ORIGINAL).into(des);//图片
 
             ll.addView(des);//加图片
 
@@ -76,5 +83,23 @@ public class AppDetailSecurityView extends RelativeLayout {
 
 
         }
+    }
+
+    @OnClick(R.id.iv_secerity)
+    public void onClick() {
+        if(isOpen){
+            //关闭
+            int measuredHeight = mDesContainer.getMeasuredHeight();
+            UIUtils.animationViewHeight(mDesContainer, measuredHeight, 0);
+            UIUtils.rotateView(mIvSecerity, 180f, 0);
+        }else {
+            //打开  高度从0到展开高度
+            mDesContainer.measure(0,0);//
+            int measuredHeight = mDesContainer.getMeasuredHeight();
+            UIUtils.animationViewHeight(mDesContainer, 0, measuredHeight);
+            UIUtils.rotateView(mIvSecerity, 0, 180f);
+        }
+
+        isOpen = !isOpen;
     }
 }

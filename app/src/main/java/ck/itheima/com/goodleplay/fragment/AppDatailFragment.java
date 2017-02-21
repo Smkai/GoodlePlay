@@ -1,15 +1,15 @@
 package ck.itheima.com.goodleplay.fragment;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
-
 import ck.itheima.com.goodleplay.R;
 import ck.itheima.com.goodleplay.bean.AppDatailBean;
 import ck.itheima.com.goodleplay.network.HeiMaRetrofit;
 import ck.itheima.com.goodleplay.widgit.AppDatailInfoView;
+import ck.itheima.com.goodleplay.widgit.AppDetailDesView;
+import ck.itheima.com.goodleplay.widgit.AppDetailGalleryView;
 import ck.itheima.com.goodleplay.widgit.AppDetailSecurityView;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,7 +21,7 @@ import retrofit2.Response;
  * 创建时间:2017/2/20 0020 上午 10:07
  * 包名:    ck.itheima.com.goodleplay.fragment
  * 更新者:  $Author$ $Date$
- * 描述:    TODO
+ * 描述:
  */
 
 public class AppDatailFragment extends BaseFragment {
@@ -74,7 +74,16 @@ public class AppDatailFragment extends BaseFragment {
         appDetailSecurityView.bindView(mDatas);
         appDetailSecurityView.setLayoutParams(layoutParams);
         linearlayoutInfoScrollView.addView(appDetailSecurityView);
-
+/*----------------------------App图片------------------------------*/
+        AppDetailGalleryView appDetailGalleryView = new AppDetailGalleryView(getContext());
+        appDetailGalleryView.bindView(mDatas);
+        appDetailGalleryView.setLayoutParams(layoutParams);
+        linearlayoutInfoScrollView.addView(appDetailGalleryView);
+/*----------------------------App简介------------------------------*/
+        AppDetailDesView appDetailDesView = new AppDetailDesView(getContext());
+        appDetailDesView.bingView(mDatas);
+        appDetailDesView.setLayoutParams(layoutParams);
+        linearlayoutInfoScrollView.addView(appDetailDesView);
 
 
 

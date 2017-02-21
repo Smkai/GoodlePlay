@@ -16,7 +16,7 @@ import ck.itheima.com.goodleplay.R;
  * 创建时间:2017/2/20 0020 上午 9:58
  * 包名:    ck.itheima.com.goodleplay.activity
  * 更新者:  $Author$ $Date$
- * 描述:    TODO
+ * 描述:
  */
 
 public class AppDataActivity extends BaseActivity {

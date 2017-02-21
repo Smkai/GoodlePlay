@@ -23,7 +23,7 @@ import ck.itheima.com.goodleplay.bean.AppDatailBean;
  * 创建时间:2017/2/20 0020 上午 11:38
  * 包名:    ck.itheima.com.goodleplay.widgit
  * 更新者:  $Author$ $Date$
- * 描述:    TODO
+ * 描述:
  */
 
 public class AppDatailInfoView extends RelativeLayout {
